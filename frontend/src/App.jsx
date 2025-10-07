@@ -1,12 +1,21 @@
 import React from 'react'
-import{ Button } from "./components/ui/button"
+import { BrowserRouter, Routes } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import NewsArticles from './pages/NewsArticles'
 
 const App = () => {
   return (
-    <div>
-    <h1 className="text-3xl font-bold underline text-red-500">Hello World!</h1>
-  <button>Click me</button>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/sign-in" element={<SignInForm/>} />
+       <Route path="/sign-up" element={<SignUpForm/>} />
+
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/news" element={<NewsArticles/>} />
+    </Routes>
+    </BrowserRouter>
   )
 }
 
